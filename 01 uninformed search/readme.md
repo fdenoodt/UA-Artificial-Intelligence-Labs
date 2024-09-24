@@ -2,6 +2,8 @@
 
 <p align="center">
 	<img width="300" src="assets/image-20240924105122337.png">
+</p>
+<p align="center">
 	All those colored walls, Mazes give Pacman the blues, So teach him to search.
 </p>
 
