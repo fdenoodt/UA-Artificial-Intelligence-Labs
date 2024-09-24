@@ -1,12 +1,11 @@
 # Project 1: Search
 
-![image-20240924105122337](assets/image-20240924105122337.png)
 <p align="center">
-All those colored walls, Mazes give Pacman the blues, So teach him to search.
+	<img width="300" src="assets/image-20240924105122337.png">
+	All those colored walls, Mazes give Pacman the blues, So teach him to search.
 </p>
 
 
-------
 
 
 
