@@ -104,7 +104,7 @@ python solver.py queens --method ac3 --n 50
 
 Your solver should now be able to solve this CSP as well, provided you define its variables and constraints. Complete the following functions:
 
-- **Sudoku.py** (2pt)
+- **Sudoku.py** 
   - `Sudoku::__init__`
   - `Sudoku::variables`
   - `Sudoku::getCell`
@@ -123,7 +123,7 @@ python solver.py sudoku puzzles/easy.txt --method ac3
 
 **Question:**
 
-- Can you solve the hard puzzle with any of your algorithms? Report on the runtime and amount of calls required to solve it with forward checking and with AC3. (1pt)
+- Can you solve the hard puzzle with any of your algorithms? Report on the runtime and amount of calls required to solve it with forward checking and with AC3.
 
 
 
