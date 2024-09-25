@@ -258,15 +258,12 @@ python autograder.py -q q4
 
 
 
----
-
-
 
 ------
 
 ## Q6: Corners Problem: Heuristic
 
-*Note*: Make sure to complete Question 4 before working on Question 6, because Question 6 builds upon your answer for Question 4.
+*Note*: Make sure to complete Question 5 before working on Question 6, because Question 6 builds upon your answer for Question 5.
 
 Implement a non-trivial, consistent heuristic for the `CornersProblem` in `cornersHeuristic`.
 
