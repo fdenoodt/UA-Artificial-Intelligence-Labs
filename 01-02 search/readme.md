@@ -177,7 +177,7 @@ python autograder.py -q q2
 
 ## Q3: Varying the Cost Function
 
-While BFS will find a fewest-actions path to the goal, we might want to find paths that are “best” in other senses. Consider `mediumDottedMaze` and `mediumScaryMaze`.
+While BFS will find a fewest-actions path to the goal, we might want to find paths that are “best” in other senses.
 
 By changing the cost function, we can encourage Pacman to find different paths. For example, we can charge more for dangerous steps in ghost-ridden areas or less for steps in food-rich areas, and a rational Pacman agent should adjust its behavior in response.
 
@@ -185,13 +185,7 @@ Implement the uniform-cost graph search algorithm in the `uniformCostSearch` fun
 
 ```shell
 python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
-python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
-python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
 ```
-
-
-
-*Note*: You should get very low and very high path costs for the `StayEastSearchAgent` and `StayWestSearchAgent` respectively, due to their exponential cost functions (see `searchAgents.py` for details).
 
 Grading: Please run the below command to see if your implementation passes all the autograder test cases.
 
