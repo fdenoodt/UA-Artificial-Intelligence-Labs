@@ -1,6 +1,6 @@
 
 
-# Project 2: Multi-Agent Search
+# Lab exercises: Multi-Agent Search
 
 <p align="center">
 	<img width="300" src="assets/image-20240924123648561.png">
@@ -213,6 +213,10 @@ python autograder.py -q q2 --no-graphics
 
   Make sure you understand why Pacman rushes the closest ghost in this case.
 
+
+
+# Graded Homework
+
 ------
 
 ## Q3 (5 pts): Alpha-Beta Pruning
@@ -298,6 +302,8 @@ python pacman.py -p ExpectimaxAgent -l trappedClassic -a depth=3 -q -n 10
 You should find that your `ExpectimaxAgent` wins about half the time, while your `AlphaBetaAgent` always loses. Make sure you understand why the behavior here differs from the minimax case.
 
 The correct implementation of expectimax will lead to Pacman losing some of the tests. This is not a problem: as it is correct behaviour, it will pass the tests.
+
+# Optional (not graded)
 
 ------
 
