@@ -217,7 +217,7 @@ python autograder.py -q q2 --no-graphics
 
 # Graded Homework
 
-------
+
 
 ## Q3 (5 pts): Alpha-Beta Pruning
 
@@ -303,9 +303,9 @@ You should find that your `ExpectimaxAgent` wins about half the time, while your
 
 The correct implementation of expectimax will lead to Pacman losing some of the tests. This is not a problem: as it is correct behaviour, it will pass the tests.
 
-# Optional (not graded)
+-----
 
-------
+# Optional (not graded)
 
 ## Q5 (6 pts): Evaluation Function
 
