@@ -49,10 +49,9 @@ Starting from lab 2, the labs are slit into two parts:
 
 **Example lab session:**
 
-- We make a few exercises together in class (see *"Lab exercises"* below). These are not graded.
+- We make a few exercises together in class (e.g. see *"Lab exercises"* in the image below). These are not graded.
 
-- The exercises under *"Graded Homework"* are part of your project 
-  It is **highly recommended** to solve these exercises before the next lab session. 
+- The exercises under the *"Graded Homework"* section are part of your project. It is **highly recommended** to solve these exercises before the next lab session. 
 
   Succeeded? 
 
