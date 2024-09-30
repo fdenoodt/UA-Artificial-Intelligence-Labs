@@ -4,28 +4,23 @@
 
 ## Contents
 
-Weeks 1 - 3 **[Search - Project 1] (33%)**:
+- Weeks 1 - 3 **[Search - Project 1] (33%)**:
 
-1. Uninformed search / informed search
+  1. Uninformed search / informed search
 
-2. Adversarial search
 
-3. Constraint Satisfaction Problems
+  2. Adversarial search
+  3. Constraint Satisfaction Problems
 
-Weeks 4 - 6 **[Uncertainty - Project 2] (33%)**: 
+- Weeks 4 - 6 **[Uncertainty - Project 2] (33%)**: 
+  1. Bayesian networks
+  2. Hidden Markov Models
 
-1. Bayesian networks
-2. Hidden Markov Models
-
-Weeks 7 - 11 **[Learning - Project 3] (33%)**:
-
-1. Machine Learning - Naive Bayes, decision trees, k-means
-
-2. Perceptron ; Logistic regression ; MLP
-
-3. Artificial Neural Networks: CNN; backprop
-
-4. Reinforcement Learning
+- Weeks 7 - 11 **[Learning - Project 3] (33%)**:
+  1. Machine Learning - Naive Bayes, decision trees, k-means
+  2. Perceptron ; Logistic regression ; MLP
+  3. Artificial Neural Networks: CNN; backprop
+  4. Reinforcement Learning
 
 
 
