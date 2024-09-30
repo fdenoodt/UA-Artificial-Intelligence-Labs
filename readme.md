@@ -63,7 +63,7 @@ The labs are slit in two parts:
 
 **Warning:**
 
-- !! Each project will consist of exercises from ~ 3 lab sessions... do not procrastinate. Start working on them immediately after the lab session, so that the workload is nicely distributed over the semester and you have time to ask questions. !!
+- !! Each project will consist of exercises from ~3 lab sessions... do not procrastinate. Start working on them immediately after the lab session, so that the workload is nicely distributed over the semester and you have time to ask questions. !!
 
 
 
