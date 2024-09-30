@@ -7,18 +7,19 @@
 - Weeks 1 - 3 **[Search - Project 1] (33%)**:
 
   1. Uninformed search / informed search
-
-
-  2. Adversarial search
-  3. Constraint Satisfaction Problems
+  
+  
+    2. Adversarial search
+    2. Constraint Satisfaction Problems
+  
 
 - Weeks 4 - 6 **[Uncertainty - Project 2] (33%)**: 
   1. Bayesian networks
   2. Hidden Markov Models
 
 - Weeks 7 - 11 **[Learning - Project 3] (33%)**:
-  1. Machine Learning - Naive Bayes, decision trees, k-means
-  2. Perceptron ; Logistic regression ; MLP
+  1. Naive Bayes, decision trees, k-means
+  2. Perceptron, Logistic regression, MLP
   3. Artificial Neural Networks: CNN; backprop
   4. Reinforcement Learning
 
@@ -31,17 +32,19 @@
 
 
 
-### Class structure
+## Class structure
 
-The labs are slit in two parts:
+Starting from lab 2, the labs are slit into two parts:
 
-- **Hour 1** (Optional QnA):
-
-  Time to continue working on your project, and ask for questions/tips when stuck.
+- **Hour 1** (Optional QnA)
+- Time to continue working on your project, and ask for questions/tips when stuck.
+  - Starts at **13:45**.
 
 - **Hour 2** Conventional Lab:
-
-  We do exercises together.
+  - We do exercises together.
+  
+  - Starts at **14:45**.
+  
 
 
 
@@ -63,7 +66,35 @@ The labs are slit in two parts:
 
 **Tip:**
 
-- Each project will consist of exercises from ~3 lab sessions... do not procrastinate. Start working on them immediately after the lab session, so that the workload is nicely distributed over the semester and you have the option to ask questions.
+- Each project will consist of exercises from ~3 lab sessions. Please, start working on them immediately after the lab session, so that the workload is nicely distributed over the semester and you have the option to ask questions during the QnA sessions.
 
 
 
+
+
+---
+
+## Projects
+
+### Project 1 - Search
+
+- Graded homework from labs:
+  - [01 search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/01 search)
+  - [02 adversarial search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/02 adversarial search)
+  - [03 constraint satisfaction problems](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/03 constraint satisfaction problems)
+
+- **Deadline**: Sunday 27th of October at 23:59.
+
+- Submission details will follow later.
+
+
+
+### Project 2 - Uncertainty
+
+- To be determined
+
+
+
+### Project 3 - Learning
+
+- To be determined
