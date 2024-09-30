@@ -1,6 +1,6 @@
 
 
-# Project 3: Constraint Satisfaction Problems
+# Lab exercises: Constraint Satisfaction Problems
 
 Code: [Link](./code.zip)
 
@@ -52,7 +52,7 @@ python solver.py queens --n 10
 
 - How many calls does your algorithm need (on average) for n=10? Is there a lot of variation in the amount of calls when you try this multiple times?  (Hint: report a few runs in a table and calculate the mean and standard deviation.)
 
-## Q2: Forward Checking
+## Q2: Forward Checking (part 1)
 
 A more efficient implementation takes the impact of an assignment on the domains of other variables into account. Implement the forward checking algorithm from the theory lectures and adapt your backtracking algorithm from problem 1 using the following templates:
 
@@ -68,7 +68,13 @@ python solver.py queens --method fc --n 50 --no-mrv --no-lcv
 
 Try a few different values of n to see whether this method works better than brute force already.
 
-Now find a better implementation for the following functions (see slides) and inspect the impact on solving the NQueens problem:
+
+
+# Graded Homework
+
+## Q3: Forward Checking (part 2)
+
+After having completed part 1, find a better implementation for the following functions (see slides) and inspect the impact on solving the NQueens problem:
 
 - **CSP.py**
   - `CSP::selectVariable`
@@ -78,23 +84,7 @@ Now find a better implementation for the following functions (see slides) and in
 
 - Report on the average amount of calls required for `n=50` with and without `CSP::selectVariable` and `CSP::orderDomain` (you can use the `flags--no-mrv` and `--no-lcv`). Can you explain why these two functions make the algorithm faster/slower?
 
-## Q3: AC3
 
-Since all our constraints are binary, we also want to implement the AC3 algorithm for checking binary constraints. Implement the following functions:
-
-- **CSP.py**
-  - `CSP::_solveAC3`
-  - `CSP::ac3`
-
-Use this command to test your implementation:
-
-```shell
-python solver.py queens --method ac3 --n 50
-```
-
-**Question:**
-
-- Report on the average calls required for n=50 with and without the improved `CSP::selectVariable` and `CSP::orderDomain`. Discuss their impact and relate your answer to question 2.
 
 ## Q4: Sudoku
 
@@ -127,3 +117,22 @@ python solver.py sudoku puzzles/easy.txt --method ac3
 
 
 
+# Optional (not graded)
+
+## Q5: AC3
+
+Since all our constraints are binary, we also want to implement the AC3 algorithm for checking binary constraints. Implement the following functions:
+
+- **CSP.py**
+  - `CSP::_solveAC3`
+  - `CSP::ac3`
+
+Use this command to test your implementation:
+
+```shell
+python solver.py queens --method ac3 --n 50
+```
+
+**Question:**
+
+- Report on the average calls required for n=50 with and without the improved `CSP::selectVariable` and `CSP::orderDomain`. Discuss their impact and relate your answer to question 2.
