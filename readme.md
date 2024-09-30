@@ -55,7 +55,7 @@ Starting from lab 2, the labs are slit into two parts:
 
   Succeeded? 
 
-  - Yes? Great, you can come an hour later next week's lab session. 
+  - Yes? Great, you can come an hour later to next week's lab session. 
   - No? No worries, you can continue on them in next week's lab practical (hour 1) and ask for questions or tips if needed.
 
 <img src="assets/image-20240930133813326.png" alt="image-20240930133813326" style="zoom: 50%;" />
