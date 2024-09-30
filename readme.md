@@ -37,12 +37,11 @@
 Starting from lab 2, the labs are slit into two parts:
 
 - **Hour 1** (Optional QnA)
-- Time to continue working on your project, and ask for questions/tips when stuck.
+  - Time to continue working on your project, and ask for questions/tips when stuck.
   - Starts at **13:45**.
 
 - **Hour 2** Conventional Lab:
   - We do exercises together.
-  
   - Starts at **14:45**.
   
 
