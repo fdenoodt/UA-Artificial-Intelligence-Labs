@@ -80,9 +80,10 @@ Starting from lab 2, the labs are slit into two parts:
 ### Project 1 - Search
 
 - Graded homework from labs:
-  - [01 search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/01 search)
-  - [02 adversarial search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/02 adversarial search)
-  - [03 constraint satisfaction problems](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/03 constraint satisfaction problems)
+  - [01 search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/01%20search)
+  - [02 adversarial search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/02%20adversarial%20search)
+  - [03 constraint satisfaction problems](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/03%20constraint%20satisfaction%20problems)
+
 
 - **Deadline**: Sunday 27th of October at 23:59.
 
