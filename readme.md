@@ -50,9 +50,9 @@ Starting from lab 2, the labs are slit into two parts:
 
 **Example lab session:**
 
-- We make the first few exercises together in class (see *"Lab exercises"*) below. 
+- We make the first few exercises together in class (see *"Lab exercises"* below). These are not graded.
 
-- The exercises under *"Graded Homework"* are part of your project. 
+- The exercises under *"Graded Homework"* are part of your project 
   It is **highly recommended** to solve these exercises before the next lab session. 
 
   Succeeded? 
@@ -64,9 +64,10 @@ Starting from lab 2, the labs are slit into two parts:
 
 
 
-**Tip:**
+**Tips:**
 
-- Each project will consist of exercises from ~3 lab sessions. Please, start working on them immediately after the lab session, so that the workload is nicely distributed over the semester and you have the option to ask questions during the QnA sessions.
+- Each project will consist of exercises from ~3 lab sessions. Please, start working on them immediately after the lab session, so that the workload is nicely distributed over the semester and you have the option to ask questions during the Q&A sessions.
+- The project exercises can be dependent on the exercises made in the labs. Make sure you make good notes during the lab session as **<u>lab-exercise-solutions are not published</u>** due to legal reasons.
 
 
 
@@ -91,10 +92,10 @@ Starting from lab 2, the labs are slit into two parts:
 
 ### Project 2 - Uncertainty
 
-- To be determined
+- To be determined.
 
 
 
 ### Project 3 - Learning
 
-- To be determined
+- To be determined.
