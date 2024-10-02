@@ -163,7 +163,7 @@ python autograder.py -q q3
 
 ---
 
-## Q5: A* search
+## Q4: A* search
 
 Implement A* graph search in the empty function `aStarSearch` in `search.py`. A* takes a heuristic function as an argument. Heuristics take two arguments: a state in the search problem (the main argument), and the problem itself (for reference information). The `nullHeuristic` heuristic function in `search.py` is a trivial example.
 
@@ -221,7 +221,7 @@ python autograder.py -q q1
 
 ------
 
-## Q4: Finding All the Corners
+## Q5: Finding All the Corners
 
 In corner mazes, there are four dots, one in each corner. Our new search problem is to find the shortest path through the maze that touches all four corners (whether the maze actually has food there or not). Note that for some mazes like `tinyCorners`, the shortest path does not always go to the closest food first! Hint: the shortest path through `tinyCorners` takes 28 steps.
 
