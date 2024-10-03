@@ -12,7 +12,6 @@
     2. Adversarial search
     2. Constraint Satisfaction Problems
   
-
 - Weeks 4 - 6 **[Uncertainty - Project 2] (33%)**: 
   1. Bayesian networks
   2. Hidden Markov Models
@@ -56,7 +55,7 @@ Starting from lab 2, the labs are slit into two parts:
   Succeeded? 
 
   - Yes? Great, you can come an hour later to next week's lab session. 
-  - No? No worries, you can continue on them in next week's lab practical (hour 1) and ask for questions or tips if needed.
+  - No? No worries, you can continue with them in next week's lab practical (hour 1) and ask for questions or tips if needed.
 
 <img src="assets/image-20240930133813326.png" alt="image-20240930133813326" style="zoom: 50%;" />
 
@@ -65,7 +64,7 @@ Starting from lab 2, the labs are slit into two parts:
 **Tips:**
 
 - Each project will consist of exercises from ~3 lab sessions. Please, start working on them immediately after the lab session, so that the workload is nicely distributed over the semester and you have the option to ask questions during the Q&A sessions.
-- The project exercises can be dependent on the exercises made in the labs. Make sure you make good notes during the lab session as **<u>lab-exercise-solutions are not published</u>** due to legal reasons.
+- The project exercises can be dependent on the exercises made in the labs. Make sure to make good notes during the lab session as **<u>lab-exercise-solutions are not published</u>** due to legal reasons.
 
 
 
@@ -77,7 +76,7 @@ Starting from lab 2, the labs are slit into two parts:
 
 ### Project 1 - Search
 
-- Graded homework from labs:
+- See exercises under the section "Graded homework" from labs:
   - [01 search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/01%20search)
   - [02 adversarial search](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/02%20adversarial%20search)
   - [03 constraint satisfaction problems](https://github.com/fdenoodt/UA-Artificial-Intelligence-Labs/tree/32387007%2BoBoii@users.noreply.github.com/03%20constraint%20satisfaction%20problems)
@@ -85,7 +84,7 @@ Starting from lab 2, the labs are slit into two parts:
 
 - **Deadline**: Sunday 27th of October at 23:59.
 
-- Submission details will follow later.
+- Submission instructions will follow soon.
 
 
 
@@ -93,8 +92,13 @@ Starting from lab 2, the labs are slit into two parts:
 
 - To be determined.
 
+- **Deadline**: Sunday 17th of November at 23:59.
+
+  
+
 
 
 ### Project 3 - Learning
 
 - To be determined.
+- **Deadline:** Sunday 15th of December at 23:59.
