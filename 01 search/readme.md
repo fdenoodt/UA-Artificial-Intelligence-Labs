@@ -225,7 +225,7 @@ python autograder.py -q q1
 
 In corner mazes, there are four dots, one in each corner. Our new search problem is to find the shortest path through the maze that touches all four corners (whether the maze actually has food there or not). Note that for some mazes like `tinyCorners`, the shortest path does not always go to the closest food first! Hint: the shortest path through `tinyCorners` takes 28 steps.
 
-*Note*: Make sure to complete Question 2 before working on Question 4, because Question 4 builds upon your answer for Question 2.
+*Note*: Make sure to complete Question 2 before working on Question 5, because Question 5 builds upon your answer for Question 2.
 
 Implement the `CornersProblem` search problem in `searchAgents.py`. You will need to choose a state representation that encodes all the information necessary to detect whether all four corners have been reached. Now, your search agent should solve:
 
@@ -263,7 +263,7 @@ python autograder.py -q q5
 
 ## Q6: Corners Problem: Heuristic
 
-*Note*: Make sure to complete Question 5 before working on Question 6, because Question 6 builds upon your answer for Question 5.
+*Note*: Make sure to complete Question 4 before working on Question 6, because Question 6 builds upon your answer for Question 4.
 
 Implement a non-trivial, consistent heuristic for the `CornersProblem` in `cornersHeuristic`.
 
