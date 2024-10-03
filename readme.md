@@ -1,5 +1,7 @@
 # Artificial Intelligence - Labs
 
+For questions, contact: fabian.denoodt@uantwerpen.be
+
 
 
 ## Contents
