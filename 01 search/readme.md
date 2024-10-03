@@ -106,7 +106,7 @@ python pacman.py -l tinyMaze -p SearchAgent -a fn=tinyMazeSearch
 
 The command above tells the `SearchAgent` to use `tinyMazeSearch` as its search algorithm, which is implemented in `search.py`. Pacman should navigate the maze successfully.
 
-Implement the breadth-first search (BFS) algorithm in the `breadthFirstSearch` function in `search.py`. Again, write a graph search algorithm that avoids expanding any already visited states. Test your code the same way you did for depth-first search.
+Implement the breadth-first search (BFS) algorithm in the `breadthFirstSearch` function in `search.py`. Write a graph search algorithm that avoids expanding any already visited states.
 
 ```shell
 python pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
