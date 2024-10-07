@@ -221,7 +221,7 @@ python autograder.py -q q2 --no-graphics
 
 
 
-## Q3 (5 pts): Alpha-Beta Pruning
+## Q3: Alpha-Beta Pruning
 
 Make a new agent that uses alpha-beta pruning to more efficiently explore the minimax tree, in `AlphaBetaAgent`. Again, your algorithm will be slightly more general than the pseudocode from lecture, so part of the challenge is to extend the alpha-beta pruning logic appropriately to multiple minimizer agents.
 
@@ -263,7 +263,7 @@ The correct implementation of alpha-beta pruning will lead to Pacman losing some
 
 ------
 
-## Q4 (5 pts): Expectimax
+## Q4: Expectimax
 
 Minimax and alpha-beta are great, but they both assume that you are playing against an adversary who makes optimal decisions. As anyone who has ever won tic-tac-toe can tell you, this is not always the case. In this question you will implement the `ExpectimaxAgent`, which is useful for modeling probabilistic behavior of agents who may make suboptimal choices.
 
@@ -309,7 +309,7 @@ The correct implementation of expectimax will lead to Pacman losing some of the 
 
 # Optional (not graded)
 
-## Q5 (6 pts): Evaluation Function
+## Q5: Evaluation Function
 
 Write a better evaluation function for Pacman in the provided function `betterEvaluationFunction`. The evaluation function should evaluate states, rather than actions like your reflex agent evaluation function did. With depth 2 search, your evaluation function should clear the `smallClassic` layout with one random ghost more than half the time and still run at a reasonable rate (to get full credit, Pacman should be averaging around 1000 points when he’s winning).
 
