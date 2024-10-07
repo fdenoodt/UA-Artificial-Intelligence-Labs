@@ -111,10 +111,6 @@ When this is done, you can test your implementation with the following command:
 python solver.py sudoku puzzles/easy.txt --method ac3
 ```
 
-**Question:**
-
-- Can you solve the hard puzzle with any of your algorithms? Report on the runtime and amount of calls required to solve it with forward checking and with AC3.
-
 
 
 # Optional (not graded)
