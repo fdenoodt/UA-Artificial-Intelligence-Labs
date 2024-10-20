@@ -108,7 +108,7 @@ If you have trouble implementing these functions, you can take a look at the `NQ
 When this is done, you can test your implementation with the following command:
 
 ```shell
-python solver.py sudoku puzzles/easy.txt --method ac3
+python solver.py sudoku puzzles/easy.txt --method fc
 ```
 
 
