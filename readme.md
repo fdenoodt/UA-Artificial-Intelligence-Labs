@@ -86,7 +86,6 @@ Starting from lab 2, the labs are slit into two parts:
 
 - **Deadline**: Sunday 27th of October at 23:59.
 
-- Submission instructions will follow soon.
 
 
 
