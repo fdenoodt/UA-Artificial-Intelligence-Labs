@@ -93,7 +93,7 @@ Starting from lab 2, the labs are slit into two parts:
 
 - To be determined.
 
-- **Deadline**: Sunday 17th of November at 23:59.
+- **Deadline**: Sunday 24th of November at 23:59.
 
   
 
@@ -102,4 +102,4 @@ Starting from lab 2, the labs are slit into two parts:
 ### Project 3 - Learning
 
 - To be determined.
-- **Deadline:** Sunday 15th of December at 23:59.
+- **Deadline:** Sunday 22th of December at 23:59.
