@@ -440,3 +440,57 @@ In this question, your Convolutional Network will likely run a bit slowly, this 
 Model Hints: We have already implemented the convolutional layer and flattened it for you. You can now treat the flattened matrix as you would a regular 1-dimensional input by passing it through linear layers. You should only need a couple of small layers in order to achieve an accuracy of 80%.
 
 
+
+
+
+
+
+--------------
+
+
+
+$$
+\text { Input }=\left[\begin{array}{ccccc}
+x_{11} & x_{12} & x_{13} & \ldots & x_{1 n} \\
+x_{21} & x_{22} & x_{23} & \ldots & x_{2 n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+x_{d 1} & x_{d 2} & x_{d 3} & \ldots & x_{d n}
+\end{array}\right]
+$$
+
+
+If we were to use a linear layer, similar to what was done in Question 2, in order to feed this input into your neural network you would have to flatten it into the following form:
+
+$$
+\text { Input }=\left[\begin{array}{lllll}
+x_{11} & x_{12} & x_{13} & \ldots & x_{1 n} \ldots x_{d n}
+\end{array}\right]
+$$
+
+
+But in some problems, such as image classification, it's a lot easier to recognize what an image is if you are looking at the original 2-dimentional form. This is where Convolutional layers come in to play.
+
+Rather than having a weight be a 1-dimentional vector, a 2d Convolutional layer would store a weight as a 2 d matrix:
+
+$$
+\text { Weights }=\left[\begin{array}{ll}
+w_{11} & w_{12} \\
+w_{21} & w_{22}
+\end{array}\right]
+$$
+
+
+And when given some input, the layer then convolves the input matrix with the output matrix. After doing this, a Convolutional Neural Network can then make the output of a convolutional layer 1-dimensional and passes it through linear layers before returning the final output.
+
+A 2d convolution can be defined as follows:
+
+$$
+\text { Output }=\left[\begin{array}{ccccc}
+a_{11} & a_{12} & a_{13} & \ldots & a_{1 n} \\
+a_{21} & a_{22} & a_{23} & \ldots & a_{2 n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{d 1} & a_{d 2} & a_{d 3} & \ldots & a_{d n}
+\end{array}\right]
+$$
+
+
