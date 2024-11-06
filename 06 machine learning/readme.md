@@ -337,9 +337,7 @@ Different words consist of different numbers of letters, so our model needs to h
 $$
 h_1=f_{\text{initial}}(x_0)
 $$
-
-
-Next, we’ll combine the output of the previous step with the next letter in the word, generating a vector summary of the the first two letters of the word. To do this, we’ll apply a sub-network that accepts a letter and outputs a hidden state, but now also depends on the previous hidden state h1*h*1. We denote this sub-network as f*f*.
+Next, we’ll combine the output of the previous step with the next letter in the word, generating a vector summary of the the first two letters of the word. To do this, we’ll apply a sub-network that accepts a letter and outputs a hidden state, but now also depends on the previous hidden state $h_1$. We denote this sub-network as $f$.
 
 h2=f(h1,x1)*h*2=*f*(*h*1,*x*1)
 
