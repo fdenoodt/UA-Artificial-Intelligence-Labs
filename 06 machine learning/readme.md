@@ -81,7 +81,9 @@ You can then follow the instructions here: [Pytorch](https://pytorch.org/) to do
 
 ------
 
+# Graded Homework
 
+---
 
 ## Provided Code (Part I)
 
@@ -148,27 +150,36 @@ In the remaining parts of the project, you will implement the following models:
 
 ### Building Neural Nets
 
-The following tips for creating Neural Network will apply whether you choose to use the Pytorch project, or the original one.
+Throughout the applications portion of the project, you’ll use the Pytorch framework to create neural networks and solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a *non-linearity*, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as $\text{relu}(x)=\max⁡(x,0)$. For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector $\mathbf{x}$ to an output vector $\mathbf{f}(\mathbf{x})$ would be given by the function:
 
-Throughout the applications portion of the project, you’ll use the framework provided in `nn.py` or Pytorch to create neural networks to solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a *non-linearity*, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as relu(x)=max⁡(x,0)relu(*x*)=max(*x*,0). For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector x**x** to an output vector f(x)**f**(**x**) would be given by the function:
-
-f(x)=relu(x⋅W1+b1)⋅W2+b2**f**(**x**)=relu(**x**⋅**W****1**+**b****1**)⋅**W****2**+**b****2**
-
-where we have parameter matrices W1**W****1** and W2**W****2** and parameter vectors b1**b****1** and b2**b****2** to learn during gradient descent. W1**W****1** will be an i×h*i*×*h* matrix, where i*i* is the dimension of our input vectors x**x**, and h*h* is the hidden layer size. b1**b****1** will be a size h*h* vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
+$$
+\mathbf{f}(\mathbf{x})=\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_{\mathbf{1}}\right) \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}
+$$
+where we have parameter matrices $\mathbf{W_1}$and $\mathbf{W_2}$ and parameter vectors $\mathbf{b_1}$ and $\mathbf{b_2}$ to learn during gradient descent. $\mathbf{W_1}$ will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $x$, and $h$ is the hidden layer size. $\mathbf{b_1}$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
 
-y^=f(x)=relu(relu(x⋅W1+b1)⋅W2+b2)⋅W3+b3**y****^**=**f**(**x**)=relu(relu(**x**⋅**W****1**+**b****1**)⋅**W****2**+**b****2**)⋅**W****3**+**b****3**
+$$
+\hat{\mathbf{y}}=\mathbf{f}(\mathbf{x})=\operatorname{relu}\left(\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2\right) \cdot \mathbf{W}_3+\mathbf{b}_3
+$$
+
 
 Or, we can decompose the above and explicitly note the 2 hidden layers:
 
-h1=f1(x)=relu(x⋅W1+b1)**h****1**=**f****1**(**x**)=relu(**x**⋅**W****1**+**b****1**)h2=f2(h1)=relu(h1⋅W2+b2)**h****2**=**f****2**(**h****1**)=relu(**h****1**⋅**W****2**+**b****2**)y^=f3(h2)=h2⋅W3+b3**y****^**=**f****3**(**h****2**)=**h****2**⋅**W****3**+**b****3**
+$$
+\begin{gathered}
+\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right) \\
+\mathbf{h}_{\mathbf{2}}=\mathbf{f}_{\mathbf{2}}\left(\mathbf{h}_{\mathbf{1}}\right)=\operatorname{relu}\left(\mathbf{h}_{\mathbf{1}} \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}\right) \\
+\hat{\mathbf{y}}=\mathbf{f}_{\mathbf{3}}\left(\mathbf{h}_{\mathbf{2}}\right)=\mathbf{h}_{\mathbf{2}} \cdot \mathbf{W}_{\mathbf{3}}+\mathbf{b}_{\mathbf{3}}
+\end{gathered}
+$$
 
-Note that we don’t have a relurelu at the end because we want to be able to output negative numbers, and because the point of having relurelu in the first place is to have non-linear transformations, and having the output be an affine linear transformation of some non-linear intermediate can be very sensible.
+
+Note that we don't have a relu at the end because we want to be able to output negative numbers, and because the point of having relu in the first place is to have non-linear transformations, and having the output be an affine linear transformation of some nonlinear intermediate can be very sensible.
 
 ### Batching
 
-For efficiency, you will be required to process whole batches of data at once rather than a single example at a time. This means that instead of a single input row vector x**x** with size i*i*, you will be presented with a batch of b*b* inputs represented as a b×i*b*×*i* matrix X**X**. We provide an example for linear regression to demonstrate how a linear layer can be implemented in the batched setting.
+For efficiency, you will be required to process whole batches of data at once rather than a single example at a time. This means that instead of a single input row vector $\mathbf{x}$ with size $i$, you will be presented with a batch of $b$ inputs represented as a $b\times i$ matrix $\mathbf{X}$. We provide an example for linear regression to demonstrate how a linear layer can be implemented in the batched setting.
 
 ### Randomness
 
@@ -313,7 +324,9 @@ To test your implementation, run the autograder:
 python autograder.py -q q3
 ```
 
+---
 
+# Optional (not graded)
 
 ------
 
