@@ -142,9 +142,9 @@ python autograder.py -q q1
 
 In the remaining parts of the project, you will implement the following models:
 
-- [Q2: Non-linear Regression](https://inst.eecs.berkeley.edu/~cs188/sp24/projects/proj5/#question-2-6-points-non-linear-regression)
-- [Q3: Handwritten Digit Classification](https://inst.eecs.berkeley.edu/~cs188/sp24/projects/proj5/#question-3-6-points-digit-classification)
-- [Q4: Language Identification](https://inst.eecs.berkeley.edu/~cs188/sp24/projects/proj5/#question-4-7-points-language-identification)
+- Q2: Non-linear Regression
+- Q3: Handwritten Digit Classification
+- Q4: Language Identification
 
 ### Building Neural Nets
 
@@ -194,26 +194,11 @@ Designing neural nets can take some trial and error. Here are some tips to help 
 
 ## Example: Linear Regression
 
-As an example of how the neural network framework works, let’s fit a line to a set of data points. We’ll start four points of training data constructed using the function y=7x0+8x1+3*y*=7*x*0+8*x*1+3. In batched form, our data is:
+As an example of how the neural network framework works, let’s fit a line to a set of data points. We’ll start four points of training data constructed using the function $y=7x_0 + 8x_1+3$. In batched form, our data is:
 
-$\begin{bmatrix}A1 &A2 & A3\\A4 & A5 & A6 \end{bmatrix}$
-$$
-\mathbf{X}=\left[\begin{array}{ll}
-0 & 0 \\
-0 & 1 \\
-1 & 0 \\
-1 & 1
-\end{array}\right] \quad \mathbf{Y}=\left[\begin{array}{c}
-3 \\
-11 \\
-10 \\
-18
-\end{array}\right]
-$$
+$$\mathbf{X} = \begin{bmatrix} 0 & 1 \\\ 0 & 1 \\\ 1 & 0 \\\ 1 & 1 \end{bmatrix}$$
 
-
-
-X=[00011011]Y=[3111018]**X**=00110101**Y**=3111018
+$$\mathbf{Y} = \begin{bmatrix} 3 \\\ 11 \\\ 10 \\\ 18  \end{bmatrix}$$
 
 Suppose the data is provided to us in the form of `Tensor`s.
 
@@ -226,11 +211,13 @@ torch.Tensor([[3],[11],[10],[18]])
 
 
 
-Let’s construct and train a model of the form f(x)=x0⋅m0+x1⋅m1+b*f*(**x**)=*x*0⋅*m*0+*x*1⋅*m*1+*b*. If done correctly, we should be able to learn that m0=7*m*0=7, m1=8*m*1=8, and b=3*b*=3.
+Let’s construct and train a model of the form $f(x)=x_0 m_0 + x_1m_1+b$. If done correctly, we should be able to learn that $m_0=7$, $m_1=8$, and $b=3$.
 
 First, we create our trainable parameters. In matrix form, these are:
 
-M=[m0m1]B=[b]**M**=[*m*0*m*1]**B**=[*b*]
+$$\mathbf{M} = \begin{bmatrix} m_0 \\\ m_1 \end{bmatrix}$$
+
+$$\mathbf{B} = \begin{bmatrix} b \end{bmatrix}$$
 
 Which corresponds to the following code:
 
@@ -262,8 +249,9 @@ predicted_y = self.Linear_Layer(x)
 
 Our goal is to have the predicted y*y*-values match the provided data. In linear regression we do this by minimizing the square loss:
 
-L=12N∑(x,y)(y−f(x))2L=2*N*1(**x**,*y*)∑(*y*−*f*(**x**))2
-
+$$
+\mathcal{L}=\frac{1}{2 N} \sum_{(\mathbf{x}, y)}(y-f(\mathbf{x}))^2
+$$
 We calculate our loss value:
 
 ```
@@ -283,11 +271,11 @@ You can look at the [official pytorch documentation](https://pytorch.org/docs/st
 
 ------
 
-## Question 2 (6 points): Non-linear Regression
+## Q2: Non-linear Regression
 
-For this question, you will train a neural network to approximate sin⁡(x)sin(*x*) over [−2π,2π][−2*π*,2*π*].
+For this question, you will train a neural network to approximate $sin⁡(x)$ over $[−2\pi,2\pi]$.
 
-You will need to complete the implementation of the `RegressionModel` class in `models.py`. For this problem, a relatively simple architecture should suffice (see [Neural Network Tips](https://inst.eecs.berkeley.edu/~cs188/sp24/projects/proj5/#neural-network-tips) for architecture tips). Use `nn.SquareLoss`(original) or `mse_loss`(pytorch) as your loss.
+You will need to complete the implementation of the `RegressionModel` class in `models.py`. For this problem, a relatively simple architecture should suffice (see <u>Neural Network Tips</u> for architecture tips). Use `nn.SquareLoss`(original) or `mse_loss`(pytorch) as your loss.
 
 Your tasks are to:
 
@@ -306,7 +294,7 @@ python autograder.py -q q2
 
 ------
 
-## Question 3 (6 points): Digit Classification
+## Q3: Digit Classification
 
 For this question, you will train a network to classify handwritten digits from the MNIST dataset.
 
@@ -328,7 +316,7 @@ python autograder.py -q q3
 
 ------
 
-## Question 4 (7 points): Language Identification
+## Q4: Language Identification
 
 Language identification is the task of figuring out, given a piece of text, what language the text is written in. For example, your browser might be able to detect if you’ve visited a page in a foreign language and offer to translate it for you. Here is an example from Chrome (which uses a neural network to implement this feature):
 
@@ -344,9 +332,12 @@ In this project, we’re going to build a smaller neural network model that iden
 | paleis    | Dutch        |
 | mieszkać  | Polish       |
 
-Different words consist of different numbers of letters, so our model needs to have an architecture that can handle variable-length inputs. Instead of a single input x*x* (like in the previous questions), we’ll have a separate input for each character in the word: x0,x1,⋯,xL−1*x*0,*x*1,⋯,*x**L*−1 where L*L* is the length of the word. We’ll start by applying a network finitial*f*initial that is just like the networks in the previous problems. It accepts its input x0*x*0 and computes an output vector h1*h*1 of dimensionality d*d*:
+Different words consist of different numbers of letters, so our model needs to have an architecture that can handle variable-length inputs. Instead of a single input $x$ (like in the previous questions), we’ll have a separate input for each character in the word: $x_0, x_1, ... ,x_{L−1}$ where $L$ is the length of the word. We’ll start by applying a network $f_{\text{initial}}$ that is just like the networks in the previous problems. It accepts its input $x_0$ and computes an output vector $h_1$ of dimensionality $d$:
 
-h1=finitial(x0)*h*1=*f*initial(*x*0)
+$$
+h_1=f_{\text{initial}}(x_0)
+$$
+
 
 Next, we’ll combine the output of the previous step with the next letter in the word, generating a vector summary of the the first two letters of the word. To do this, we’ll apply a sub-network that accepts a letter and outputs a hidden state, but now also depends on the previous hidden state h1*h*1. We denote this sub-network as f*f*.
 
@@ -398,7 +389,7 @@ python autograder.py -q q4
 
 ------
 
-## EXTRA CREDIT (1 point): Question 5(Pytorch Only)
+## EXTRA CREDIT (1 point): Q5
 
 The following question is worth 1 point of extra credit and is only available if you are using the pytorch version of the project.
 
