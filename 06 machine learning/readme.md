@@ -339,36 +339,41 @@ $$
 h_1=f_{\text{initial}}(x_0)
 $$
 Next, we’ll combine the output of the previous step with the next letter in the word, generating a vector summary of the the first two letters of the word. To do this, we’ll apply a sub-network that accepts a letter and outputs a hidden state, but now also depends on the previous hidden state $h_1$. We denote this sub-network as $f$.
+$$
+h_2=f(h_1,x_1)
+$$
 
-h2=f(h1,x1)*h*2=*f*(*h*1,*x*1)
 
 This pattern continues for all letters in the input word, where the hidden state at each step summarizes all the letters the network has processed thus far:
+$$
+h_3=f(h_2,x_2) \\
+\dots
+$$
 
-h3=f(h2,x2)⋮*h*3=*f*(*h*2,*x*2)⋮
 
-Throughout these computations, the function f(⋅,⋅)*f*(⋅,⋅) is the same piece of neural network and uses the same trainable parameters; finitial*f*initial will also share some of the same parameters as f(⋅,⋅)*f*(⋅,⋅). In this way, the parameters used when processing words of different length are all shared. You can implement this using a for loop over the provided inputs `xs`, where each iteration of the loop computes either finitial*f*initial or f*f*.
+Throughout these computations, the function $f(\cdot,\cdot)$ is the same piece of neural network and uses the same trainable parameters; $f_\text{initial}$ will also share some of the same parameters as $f(\cdot,\cdot)$. In this way, the parameters used when processing words of different length are all shared. You can implement this using a for loop over the provided inputs `xs`, where each iteration of the loop computes either $f_\text{initial}$ or $f$.
 
 The technique described above is called a Recurrent Neural Network (RNN). A schematic diagram of the RNN is shown below:
 
 ![RNN diagram](assets/ml_rnn.png)
 
-Here, an RNN is used to encode the word “cat” into a fixed-size vector h3*h*3.
+Here, an RNN is used to encode the word “cat” into a fixed-size vector $h_3$.
 
-After the RNN has processed the full length of the input, it has encoded the arbitrary-length input word into a fixed-size vector hL*h**L*, where L*L* is the length of the word. This vector summary of the input word can now be fed through additional output transformation layers to generate classification scores for the word’s language identity.
+After the RNN has processed the full length of the input, it has encoded the arbitrary-length input word into a fixed-size vector $h_L$, where $L$ is the length of the word. This vector summary of the input word can now be fed through additional output transformation layers to generate classification scores for the word’s language identity.
 
 ### Batching
 
-Although the above equations are in terms of a single word, in practice you must use batches of words for efficiency. For simplicity, our code in the project ensures that all words within a single batch have the same length. In batched form, a hidden state hi*h**i* is replaced with the matrix Hi*H**i* of dimensionality `batch_size` by `d`.
+Although the above equations are in terms of a single word, in practice you must use batches of words for efficiency. For simplicity, our code in the project ensures that all words within a single batch have the same length. In batched form, a hidden state $h_i$ is replaced with the matrix $H_i$ of dimensionality `batch_size` by `d`.
 
 ### Design Tips
 
-The design of the recurrent function f(⋅,⋅)*f*(⋅,⋅) is the primary challenge for this task. Here are some tips:
+The design of the recurrent function $f(\cdot,\cdot)$ is the primary challenge for this task. Here are some tips:
 
-- Start with an architecture finitial(x)*f*initial(*x*) of your choice similar to the previous questions, as long as it has at least one non-linearity.
-- You should use the following method of constructing f(⋅,⋅)*f*(⋅,⋅) given finitial(x)*f*initial(*x*). The first transformation layer of finitial*f*initial will begin by multiplying the vector x0*x*0 by some weight matrix Wx**W****x** to produce z0=x0⋅Wx*z*0=*x*0⋅**W****x**. For subsequent letters, you should replace this computation with zi=xi⋅Wx+hi⋅Whidden*z**i*=*x**i*⋅**W****x**+*h**i*⋅**W**hidden using an `nn.Add` operation. In other words, you should replace a computation of the form `z0 = nn.Linear(x, W)` with a computation of the form `z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden))`(`self.Layer1(x) + self.Layer2(x)` in pytorch).
-- If done correctly, the resulting function f(xi,hi)=g(zi)=g(zxi,hi)*f*(*x**i*,*h**i*)=*g*(*z**i*)=*g*(*z**x**i*,*h**i*) will be non-linear in both x*x* and h*h*.
+- Start with an architecture $f_\text{initial}(x)$ of your choice similar to the previous questions, as long as it has at least one non-linearity.
+- You should use the following method of constructing $f(\cdot, \cdot)$given $f_\text{initial(x)}$. The first transformation layer of $f_\text{initial(x)}$ will begin by multiplying the vector $x_0$ by some weight matrix $Wx$ to produce $z_0 = x_0 \cdot W_x$. For subsequent letters, you should replace this computation with $z_i = x_i \cdot W x + h_i \cdot W_\text{hidden}$ using an `nn.Add` operation. In other words, you should replace a computation of the form `z0 = nn.Linear(x, W)` with a computation of the form `z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden))`(`self.Layer1(x) + self.Layer2(x)` in pytorch).
+- If done correctly, the resulting function $f(x_i,h_i)=g(z_i)=g(z_{xi},h_i)$ will be non-linear in both x*x* and $h$.
 - The hidden size `d` should be sufficiently large.
-- Start with a shallow network for f*f*, and figure out good values for the hidden size and learning rate before you make the network deeper. If you start with a deep network right away you will have exponentially more hyperparameter combinations, and getting any single hyperparameter wrong can cause your performance to suffer dramatically.
+- Start with a shallow network for $f$, and figure out good values for the hidden size and learning rate before you make the network deeper. If you start with a deep network right away you will have exponentially more hyperparameter combinations, and getting any single hyperparameter wrong can cause your performance to suffer dramatically.
 
 ### Your task
 
@@ -434,12 +439,4 @@ In this question, your Convolutional Network will likely run a bit slowly, this 
 
 Model Hints: We have already implemented the convolutional layer and flattened it for you. You can now treat the flattened matrix as you would a regular 1-dimensional input by passing it through linear layers. You should only need a couple of small layers in order to achieve an accuracy of 80%.
 
-## Submission
 
-In order to submit your project upload the Python files you edited. For instance, use Gradescope’s upload on all `.py` files in the project folder.
-
-The full project autograder takes ~12 minutes to run for the staff reference solutions to the project. If your code takes significantly longer, consider checking your implementations for efficiency.
-
-Please specify any partner you may have worked with and verify that both you and your partner are associated with the submission after submitting.
-
-------
