@@ -252,6 +252,7 @@ Our goal is to have the predicted y*y*-values match the provided data. In linear
 $$
 \mathcal{L}=\frac{1}{2 N} \sum_{(\mathbf{x}, y)}(y-f(\mathbf{x}))^2
 $$
+
 We calculate our loss value:
 
 ```
