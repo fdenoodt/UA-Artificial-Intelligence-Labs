@@ -413,7 +413,7 @@ In this question, your Convolutional Network will likely run a bit slowly, this 
 Model Hints: We have already implemented the convolutional layer and flattened it for you. You can now treat the flattened matrix as you would a regular 1-dimensional input by passing it through linear layers. You should only need a couple of small layers in order to achieve an accuracy of 80%.
 
 ```
-python autograder.py -q q2
+python autograder.py -q q5
 ```
 
 ---
