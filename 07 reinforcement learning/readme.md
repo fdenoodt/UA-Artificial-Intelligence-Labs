@@ -335,7 +335,7 @@ python autograder.py -q q2
 
 Implement an approximate Q-learning agent that learns weights for features of states, where many states might share the same features. Write your implementation in `ApproximateQAgent` class in `qlearningAgents.py`, which is a subclass of `PacmanQAgent`.
 
-*Note*: Approximate Q-learning assumes the existence of a feature function $f(s,a)$ over state and action pairs, which yields a vector $[f_1(s,a),\dots,f_i(s,a),\dots,f_n(s,a)]$ of feature values. We provide feature functions for you in `featureExtractors.py`. Feature vectors are `util.Counter` (like a dictionary) objects containing the non-zero pairs of features and values; all omitted features have value zero. So, instead of an vector where the index in the vector defines which feature is which, we have the keys in the dictionary define the identity of the feature.
+*Note*: Approximate Q-learning assumes the existence of a feature function $f(s,a)$ over state and action pairs, which yields a vector $[f_1(s,a),\dots,f_i(s,a),\dots,f_n(s,a)]$ of feature values. We provide feature functions for you in `featureExtractors.py`. Feature vectors are `util.Counter` (like a dictionary) objects containing the non-zero pairs of features and values; all omitted features have value zero. So, instead of a vector where the index in the vector defines which feature is which, we have the keys in the dictionary define the identity of the feature.
 
 The approximate Q-function takes the following form:
 
