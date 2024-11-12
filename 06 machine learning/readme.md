@@ -26,7 +26,7 @@ This project will be an introduction to machine learning; you will build a neura
 
 
 
-In this project, you will be using Pytorch, which is often used in practical applications of neural networks due to its efficiency and ease of use. 
+In this project, you will be using PyTorch, which is often used in practical applications of neural networks due to its efficiency and ease of use. 
 
 ## Installation
 
@@ -75,7 +75,7 @@ pip install numpy
 
 
 
-You can then follow the instructions here: [Pytorch](https://pytorch.org/) to download the latest version of Pytorch using either Conda or Pip. If you haven’t used Pytorch before, please use the CPU version. The CPU version of Pytorch is the least likely to cause any bugs or complications.
+You can then follow the instructions here: [Pytorch](https://pytorch.org/) to download the latest version of PyTorch using either Conda or Pip. If you haven’t used PyTorch before, please use the CPU version. The CPU version of PyTorch is the least likely to cause any bugs or complications.
 
 ------
 
@@ -83,16 +83,16 @@ You can then follow the instructions here: [Pytorch](https://pytorch.org/) to do
 
 ## Provided Code (Part I)
 
-Below are a the main functions you should be using. This list is not exhaustive, we have imported all the functions you may use in models.py and encourage you to look at the pytorch documentation for additional guidelines on how you should use them.
+Below are a the main functions you should be using. This list is not exhaustive, we have imported all the functions you may use in models.py and encourage you to look at the PyTorch documentation for additional guidelines on how you should use them.
 
-- `tensor()`: Tensors are the primary data structure in pytorch. They work very similarly to Numpy arrays in that you can add and multiply them. Anytime you use a pytorch function or feed an input into a neural network, you should try to make sure that your input is in the form of a tensor. You can change a python list to a tensor as such: `tensor(data)` where `data` is your n-dimensional list.
-- `relu(input)`: The pytorch relu activation is called as such: `relu(input)`. It takes in an input, and returns `max(input, 0)`.
-- `Linear`: Use this class to implement a linear layer. A linear layer takes the dot product of a vector containing your weights, and the input. You must initialize this in your `__init__` function like so: `self.layer = Linear(length of input vector, length of output vector)` and call it as such when running your model: `self.layer(input)`. When you define a linear layer like this, Pytorch automatically creates weights and updates them during training.
+- `tensor()`: Tensors are the primary data structure in PyTorch. They work very similarly to Numpy arrays in that you can add and multiply them. Anytime you use a PyTorch function or feed an input into a neural network, you should try to make sure that your input is in the form of a tensor. You can change a python list to a tensor as such: `tensor(data)` where `data` is your n-dimensional list.
+- `relu(input)`: The PyTorch relu activation is called as such: `relu(input)`. It takes in an input, and returns `max(input, 0)`.
+- `Linear`: Use this class to implement a linear layer. A linear layer takes the dot product of a vector containing your weights, and the input. You must initialize this in your `__init__` function like so: `self.layer = Linear(length of input vector, length of output vector)` and call it as such when running your model: `self.layer(input)`. When you define a linear layer like this, PyTorch automatically creates weights and updates them during training.
 - `movedim(input_vector, initial_dimension_position, final_dimension_position)`: This function takes in a matrix, and swaps the initial_dimension_position(passed in as an int), with final_dimension_position. This will be helpful in question 3.
 - `cross_entropy(prediction, target)`: This function should be your loss function for any classification tasks(Questions 3-5). The further away your prediction is from the target, the higher a value this will return.
 - `mse_loss(prediction, target)`: This function should be your loss function for any regression tasks(Question 2). It can be used in the same way as cross_entropy.
 
-All the data in the pytorch version will be provided to you in the form of a pytorch `dataset` object, which you will be transforming into a pytorch `dataloader` in order to help you easily create batch sizes.
+All the data in the PyTorch version will be provided to you in the form of a PyTorch `dataset` object, which you will be transforming into a PyTorch `dataloader` in order to help you easily create batch sizes.
 
 ```
 >>> data = DataLoader(training_dataset, batch_size = 64)
@@ -116,11 +116,14 @@ For the perceptron, the output labels will be either `1` or `−1`, meaning that
 
 Your tasks are as follows:
 
-- Fill out the `init(self, dimensions)` function. This should initialize the weight parameter in `PerceptronModel`. You should define it as a vector with shape $(1 \times \text{dimensions})$, where all components are the value $1$. You can do this using the functions `torch.nn.Parameter()` and `torch.ones()` which are already imported for you. You can find their documentation online. This is so that our autograder, as well as pytorch, recognize your weight as a parameter of your model.
-- Implement the `run(self, x)` method. This should compute the dot product of the stored weight vector and the given input, returning a `Tensor` object.
-- Implement `get_prediction(self, x)`, which should return `1` if the dot product is non-negative or `−1` otherwise.
-- Write the `train(self)` method. This should repeatedly loop over the data set and make updates on examples that are misclassified. When an entire pass over the data set is completed without making any mistakes, 100% training accuracy has been achieved, and training can terminate.
-- Luckily, Pytorch makes it easy to run operations on tensors. If you would like to update your weight by some tensor `direction` and a constant `magnitude`, you can do it as follows: `self.w += direction * magnitude`
+- **Fill out the `init(self, dimensions)` function.** Initialize the weight parameter in `PerceptronModel` as a vector with shape $(1 \times \text{dimensions})$, where all components are set to the value `1`. Use the `torch.nn.Parameter()` and `torch.ones()` functions (already imported) to accomplish this. These functions ensure that PyTorch and our autograder recognize your weight as a parameter of your model.
+
+- **Implement the `run(self, x)` method.** This method should compute the dot product between the stored weight vector and the given input, returning a `Tensor` object.
+
+- **Implement `get_prediction(self, x)`.** This should return `1` if the dot product is non-negative and `−1` otherwise.
+
+- **Write the `train(self)` method.** This method should repeatedly loop over the dataset, updating weights for any misclassified examples. When a complete pass over the dataset is made without any mistakes, training has achieved 100% accuracy and can terminate.
+- Luckily, PyTorch makes it easy to run operations on tensors. If you would like to update your weight by some tensor `direction` and a constant `magnitude`, you can do it as follows: `self.w += direction * magnitude`
 
 For this question, as well as all of the remaining ones, every batch returned by the DataLoader will be a dictionary in the form: {‘x’:features, ‘label’:label} with label being the value(s) we want to predict based off of the features.
 
@@ -146,7 +149,7 @@ In the remaining parts of the project, you will implement the following models:
 
 ### Building Neural Nets
 
-Throughout the applications portion of the project, you’ll use the Pytorch framework to create neural networks and solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a *non-linearity*, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as $\text{relu}(x)=\max⁡(x,0)$. For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector $\mathbf{x}$ to an output vector $\mathbf{f}(\mathbf{x})$ would be given by the function:
+Throughout the applications portion of the project, you’ll use the PyTorch framework to create neural networks and solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a *non-linearity*, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as $\text{relu}(x)=\max⁡(x,0)$. For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector $\mathbf{x}$ to an output vector $\mathbf{f}(\mathbf{x})$ would be given by the function:
 
 $$
 \mathbf{f}(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2
@@ -247,7 +250,7 @@ torch.Tensor([[0]])
 
 
 
-Next, we compute our model’s predictions for y. If you’re working on the pytorch version, you must define a linear layer in your `__init__()` function as mentioned in the definition that is provided for `Linear` above.:
+Next, we compute our model’s predictions for y. If you’re working on the PyTorch version, you must define a linear layer in your `__init__()` function as mentioned in the definition that is provided for `Linear` above.:
 
 ```
 predicted_y = self.Linear_Layer(x)
@@ -269,14 +272,14 @@ loss = mse_loss(predicted_y, y)
 
 
 
-Finally, after defining your neural network, In order to train your network, you will first need to initialize an optimizer. Pytorch has several built into it, but for this project use: `optim.Adam(self.parameters(), lr=lr)` where `lr` is your learning rate. Once you’ve defined your optimizer, you must do the following every iteration in order to update your weights:
+Finally, after defining your neural network, In order to train your network, you will first need to initialize an optimizer. PyTorch has several built into it, but for this project use: `optim.Adam(self.parameters(), lr=lr)` where `lr` is your learning rate. Once you’ve defined your optimizer, you must do the following every iteration in order to update your weights:
 
-- Reset the gradients calculated by pytorch with `optimizer.zero_grad()`
+- Reset the gradients calculated by PyTorch with `optimizer.zero_grad()`
 - Calculate your loss tensor by calling your `get_loss()` function
 - Calculate your gradients using `loss.backward()`, where `loss` is your loss tensor returned by `get_loss`
 - And finally, update your weights by calling `optimizer.step()`
 
-You can look at the [official pytorch documentation](https://pytorch.org/docs/stable/optim.html) for an example of how to use a pytorch optimizer().
+You can look at the [official pytorch documentation](https://pytorch.org/docs/stable/optim.html) for an example of how to use a PyTorch optimizer().
 
 ------
 
@@ -289,7 +292,7 @@ You will need to complete the implementation of the `RegressionModel` class in `
 Your tasks are to:
 
 - Implement `RegressionModel.__init__` with any needed initialization.
-- Implement `RegressionModel.run`(`RegressionModel.forward` in pytorch) to return a `batch_size` by `1` node that represents your model’s prediction.
+- Implement `RegressionModel.run`(`RegressionModel.forward` in PyTorch) to return a `batch_size` by `1` node that represents your model’s prediction.
 - Implement `RegressionModel.get_loss` to return a loss for given inputs and target outputs.
 - Implement `RegressionModel.train`, which should train your model using gradient-based updates.
 
@@ -309,7 +312,7 @@ For this question, you will train a network to classify handwritten digits from 
 
 Each digit is of size `28` by `28` pixels, the values of which are stored in a `784`-dimensional vector of floating point numbers. Each output we provide is a `10`-dimensional vector which has zeros in all positions, except for a one in the position corresponding to the correct class of the digit.
 
-Complete the implementation of the `DigitClassificationModel` class in `models.py`. The return value from `DigitClassificationModel.run()` should be a `batch_size` by `10` node containing scores, where higher scores indicate a higher probability of a digit belonging to a particular class (0-9). You should use `nn.SoftmaxLoss`(or `cross_entropy` if you’re using pytorch) as your loss. Do not put a ReLU activation in the last linear layer of the network.
+Complete the implementation of the `DigitClassificationModel` class in `models.py`. The return value from `DigitClassificationModel.run()` should be a `batch_size` by `10` node containing scores, where higher scores indicate a higher probability of a digit belonging to a particular class (0-9). You should use `cross_entropy` as your loss. Do not put a ReLU activation in the last linear layer of the network.
 
 For both this question and Q4, in addition to training data, there is also validation data and a test set. You can use `dataset.get_validation_accuracy()` to compute validation accuracy for your model, which can be useful when deciding whether to stop training. The test set will be used by the autograder.
 
@@ -403,7 +406,7 @@ After doing this, complete the DigitConvolutionalModel() class in `models.py`. Y
 
 The autograder will first check your convolve function to ensure that it correctly calculates the convolution of two matrices. It will then test your model to see if it can achieve and accuracy of 80% on a greatly simplified subset MNIST dataset. Since this question is mainly concerned with the Convolve() function that you will be writing, your model should train relatively quick.
 
-In this question, your Convolutional Network will likely run a bit slowly, this is to be expected since packages like Pytorch have optimizations that they use to speed up convolutions. However, this should not affect your final score since we provide you with an easier version of the MNIST dataset to train on.
+In this question, your Convolutional Network will likely run a bit slowly, this is to be expected since packages like PyTorch have optimizations that they use to speed up convolutions. However, this should not affect your final score since we provide you with an easier version of the MNIST dataset to train on.
 
 Model Hints: We have already implemented the convolutional layer and flattened it for you. You can now treat the flattened matrix as you would a regular 1-dimensional input by passing it through linear layers. You should only need a couple of small layers in order to achieve an accuracy of 80%.
 
@@ -467,7 +470,7 @@ Although the above equations are in terms of a single word, in practice you must
 The design of the recurrent function $f(\cdot,\cdot)$ is the primary challenge for this task. Here are some tips:
 
 - Start with an architecture $f_\text{initial}(x)$ of your choice similar to the previous questions, as long as it has at least one non-linearity.
-- You should use the following method of constructing $f(\cdot, \cdot)$given $f_\text{initial(x)}$. The first transformation layer of $f_\text{initial(x)}$ will begin by multiplying the vector $x_0$ by some weight matrix $Wx$ to produce $z_0 = x_0 \cdot W_x$. For subsequent letters, you should replace this computation with $z_i = x_i \cdot W x + h_i \cdot W_\text{hidden}$ using an `nn.Add` operation. In other words, you should replace a computation of the form `z0 = nn.Linear(x, W)` with a computation of the form `z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden))`(`self.Layer1(x) + self.Layer2(x)` in pytorch).
+- You should use the following method of constructing $f(\cdot, \cdot)$given $f_\text{initial(x)}$. The first transformation layer of $f_\text{initial(x)}$ will begin by multiplying the vector $x_0$ by some weight matrix $Wx$ to produce $z_0 = x_0 \cdot W_x$. For subsequent letters, you should replace this computation with $z_i = x_i \cdot W x + h_i \cdot W_\text{hidden}$ using an `nn.Add` operation. In other words, you should replace a computation of the form `z0 = nn.Linear(x, W)` with a computation of the form `z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden))`(`self.Layer1(x) + self.Layer2(x)` in PyTorch).
 - If done correctly, the resulting function $f(x_i,h_i)=g(z_i)=g(z_{xi},h_i)$ will be non-linear in both x*x* and $h$.
 - The hidden size `d` should be sufficiently large.
 - Start with a shallow network for $f$, and figure out good values for the hidden size and learning rate before you make the network deeper. If you start with a deep network right away you will have exponentially more hyperparameter combinations, and getting any single hyperparameter wrong can cause your performance to suffer dramatically.
