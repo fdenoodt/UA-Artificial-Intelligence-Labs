@@ -81,11 +81,9 @@ You can then follow the instructions here: [Pytorch](https://pytorch.org/) to do
 
 # Graded Homework
 
----
-
 ## Provided Code (Part I)
 
-If you are using the pytorch version of this project, here are a the main functions you should be using. This list is not exhaustive, we have imported all the functions you may use in models.py and encourage you to look at the pytorch documentation for additional guidelines on how you should use them.
+Below are a the main functions you should be using. This list is not exhaustive, we have imported all the functions you may use in models.py and encourage you to look at the pytorch documentation for additional guidelines on how you should use them.
 
 - `tensor()`: Tensors are the primary data structure in pytorch. They work very similarly to Numpy arrays in that you can add and multiply them. Anytime you use a pytorch function or feed an input into a neural network, you should try to make sure that your input is in the form of a tensor. You can change a python list to a tensor as such: `tensor(data)` where `data` is your n-dimensional list.
 - `relu(input)`: The pytorch relu activation is called as such: `relu(input)`. It takes in an input, and returns `max(input, 0)`.
