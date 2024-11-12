@@ -233,10 +233,11 @@ Pacman fails to win on larger layouts because each board configuration is a sepa
 ## Q1: Value Iteration
 
 Recall the value iteration state update equation:
+<!-- V_{k+1}(s) \leftarrow \max _a \sum_{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V_k\left(s^{\prime}\right)\right] -->
 
-$$
-V_{k+1}(s) \leftarrow \max _a \sum_{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V_k\left(s^{\prime}\right)\right]
-$$
+![Equation](https://latex.codecogs.com/png.latex?V_%7Bk%2B1%7D%28s%29%20%5Cleftarrow%20%5Cmax%20_a%20%5Csum_%7Bs%5E%7B%5Cprime%7D%7D%20T%5Cleft%28s%2C%20a%2C%20s%5E%7B%5Cprime%7D%5Cright%29%5Cleft%5BR%5Cleft%28s%2C%20a%2C%20s%5E%7B%5Cprime%7D%5Cright%29%2B%5Cgamma%20V_k%5Cleft%28s%5E%7B%5Cprime%7D%5Cright%29%5Cright%5D)
+
+
 Write a value iteration agent in `ValueIterationAgent`, which has been partially specified for you in `valueIterationAgents.py`. Your value iteration agent is an offline planner, not a reinforcement learning agent, and so the relevant training option is the number of iterations of value iteration it should run (option `-i`) in its initial planning phase. `ValueIterationAgent` takes an MDP on construction and runs value iteration for the specified number of iterations before the constructor returns.
 
 Value iteration computes k-step estimates of the optimal values, $V_k$. In addition to `runValueIteration`, implement the following methods for `ValueIterationAgent` using $V_k$:
