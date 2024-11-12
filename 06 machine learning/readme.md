@@ -1,3 +1,7 @@
+<script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 # Lab exercises: Machine Learning
 
 <p align="center">
@@ -157,6 +161,9 @@ where we have parameter matrices $\mathbf{W_1}$and $\mathbf{W_2}$ and parameter 
 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
 
+![equation](https://latex.codecogs.com/png.image?\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right))
+
+
 $$
 \hat{\mathbf{y}}=\mathbf{f}(\mathbf{x})=\text{relu}\left(\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2\right) \cdot \mathbf{W}_3+\mathbf{b}_3
 $$
@@ -165,7 +172,17 @@ $$
 Or, we can decompose the above and explicitly note the 2 hidden layers:
 
 $$
+\begin{align}
+x = 5\\
+y ==3\\
 \mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right)
+\end{align}
+$$
+
+$$
+\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right) \\
+\mathbf{h}_{\mathbf{2}}=\mathbf{f}_{\mathbf{2}}\left(\mathbf{h}_{\mathbf{1}}\right)=\text{relu}\left(\mathbf{h}_{\mathbf{1}} \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}\right) \\
+\hat{\mathbf{y}}=\mathbf{f}_{\mathbf{3}}\left(\mathbf{h}_{\mathbf{2}}\right)=\mathbf{h}_{\mathbf{2}} \cdot \mathbf{W}_{\mathbf{3}}+\mathbf{b}_{\mathbf{3}}
 $$
 
 
