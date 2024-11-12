@@ -408,9 +408,9 @@ python autograder.py -q q4
 
 ## Q5: Convolutional Neural Networks
 
-The following question is worth 1 point of extra credit and is only available if you are using the pytorch version of the project.
+The following question is worth 1 point of extra credit.
 
-Oftentimes when training a neural network, it becomes necessary to use layers more advanced than the simple Linear layers that you’ve been using. One common type of layer is a Convolutional Layer. Convolutional layers make it easier to take spatial information into account when training on multi-dimentional inputs. For example, consider the following Input:
+Oftentimes when training a neural network, it becomes necessary to use layers more advanced than the simple Linear layers that you’ve been using. One common type of layer is a Convolutional Layer. Convolutional layers make it easier to take spatial information into account when training on multi-dimensional inputs. For example, consider the following Input:
 
 $$
 \text { Input }=\left[\begin{array}{ccccc}
