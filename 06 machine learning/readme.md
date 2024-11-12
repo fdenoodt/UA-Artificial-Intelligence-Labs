@@ -158,7 +158,7 @@ where we have parameter matrices $\mathbf{W_1}$and $\mathbf{W_2}$ and parameter 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
 
 $$
-\hat{\mathbf{y}}=\mathbf{f}(\mathbf{x})=\operatorname{relu}\left(\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2\right) \cdot \mathbf{W}_3+\mathbf{b}_3
+\hat{\mathbf{y}}=\mathbf{f}(\mathbf{x})=\text{relu}\left(\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2\right) \cdot \mathbf{W}_3+\mathbf{b}_3
 $$
 
 
