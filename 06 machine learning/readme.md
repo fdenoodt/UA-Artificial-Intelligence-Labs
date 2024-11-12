@@ -298,7 +298,7 @@ Your tasks are to:
 - Implement `RegressionModel.get_loss` to return a loss for given inputs and target outputs.
 - Implement `RegressionModel.train`, which should train your model using gradient-based updates.
 
-There is only a single dataset split for this task (i.e., there is only training data and no validation data or test set). Your implementation will receive full points if it gets a loss of 0.02 or better, averaged across all examples in the dataset. You may use the training loss to determine when to stop training (If you’re using the original version, use `nn.as_scalar` to convert a loss node to a Python number). Note that it should take the model a few minutes to train.
+There is only a single dataset split for this task (i.e., there is only training data and no validation data or test set). Your implementation will receive full points if it gets a loss of 0.02 or better, averaged across all examples in the dataset. You may use the training loss to determine when to stop training. Note that it should take the model a few minutes to train.
 
 ```
 python autograder.py -q q2
