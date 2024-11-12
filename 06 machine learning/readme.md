@@ -346,7 +346,7 @@ x_{d 1} & x_{d 2} & x_{d 3} & \ldots & x_{d n}
 $$
 
 
-If we were to use a linear layer, similar to what was done in Question 2, in order to feed this input into your neural network you would have to flatten it into the following form:
+If we were to use a linear layer, similar to what was done in Question 3, in order to feed this input into your neural network you would have to flatten it into the following form:
 
 $$
 \text { Input }=\left[\begin{array}{lllll}
