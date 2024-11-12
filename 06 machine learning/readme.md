@@ -157,7 +157,7 @@ $$
 \mathbf{f}(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2
 $$
 
-where we have parameter matrices $\mathbf{W_1}$and $\mathbf{W_2}$ and parameter vectors $\mathbf{b_1}$ and $\mathbf{b_2}$ to learn during gradient descent. $\mathbf{W_1}$ will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $x$, and $h$ is the hidden layer size. $\mathbf{b_1}$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
+where we have parameter matrices $\mathbf{W_1}$ and $\mathbf{W_2}$ and parameter vectors $\mathbf{b_1}$ and $\mathbf{b_2}$ to learn during gradient descent. $\mathbf{W_1}$ will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $x$, and $h$ is the hidden layer size. $\mathbf{b_1}$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
 
@@ -298,7 +298,7 @@ Your tasks are to:
 - Implement `RegressionModel.get_loss` to return a loss for given inputs and target outputs.
 - Implement `RegressionModel.train`, which should train your model using gradient-based updates.
 
-There is only a single dataset split for this task (i.e., there is only training data and no validation data or test set). Your implementation will receive full points if it gets a loss of 0.02 or better, averaged across all examples in the dataset. You may use the training loss to determine when to stop training (If you’re using the original version, use `nn.as_scalar` to convert a loss node to a Python number). Note that it should take the model a few minutes to train.
+There is only a single dataset split for this task (i.e., there is only training data and no validation data or test set). Your implementation will receive full points if it gets a loss of 0.02 or better, averaged across all examples in the dataset. You may use the training loss to determine when to stop training. Note that it should take the model a few minutes to train.
 
 ```
 python autograder.py -q q2
@@ -346,7 +346,7 @@ x_{d 1} & x_{d 2} & x_{d 3} & \ldots & x_{d n}
 $$
 
 
-If we were to use a linear layer, similar to what was done in Question 2, in order to feed this input into your neural network you would have to flatten it into the following form:
+If we were to use a linear layer, similar to what was done in Question 3, in order to feed this input into your neural network you would have to flatten it into the following form:
 
 $$
 \text { Input }=\left[\begin{array}{lllll}
@@ -411,6 +411,10 @@ The autograder will first check your convolve function to ensure that it correct
 In this question, your Convolutional Network will likely run a bit slowly, this is to be expected since packages like PyTorch have optimizations that they use to speed up convolutions. However, this should not affect your final score since we provide you with an easier version of the MNIST dataset to train on.
 
 Model Hints: We have already implemented the convolutional layer and flattened it for you. You can now treat the flattened matrix as you would a regular 1-dimensional input by passing it through linear layers. You should only need a couple of small layers in order to achieve an accuracy of 80%.
+
+```
+python autograder.py -q q5
+```
 
 ---
 
