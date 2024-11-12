@@ -1,7 +1,3 @@
-<script type="text/javascript" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
 # Lab exercises: Machine Learning
 
 <p align="center">
@@ -155,14 +151,12 @@ In the remaining parts of the project, you will implement the following models:
 Throughout the applications portion of the project, you’ll use the Pytorch framework to create neural networks and solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a *non-linearity*, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as $\text{relu}(x)=\max⁡(x,0)$. For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector $\mathbf{x}$ to an output vector $\mathbf{f}(\mathbf{x})$ would be given by the function:
 
 $$
-\mathbf{f}(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_{\mathbf{1}}\right) \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}
+\mathbf{f}(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2
 $$
+
 where we have parameter matrices $\mathbf{W_1}$and $\mathbf{W_2}$ and parameter vectors $\mathbf{b_1}$ and $\mathbf{b_2}$ to learn during gradient descent. $\mathbf{W_1}$ will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $x$, and $h$ is the hidden layer size. $\mathbf{b_1}$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
-
-![equation](https://latex.codecogs.com/png.image?\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right))
-
 
 $$
 \hat{\mathbf{y}}=\mathbf{f}(\mathbf{x})=\text{relu}\left(\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2\right) \cdot \mathbf{W}_3+\mathbf{b}_3
@@ -173,16 +167,10 @@ Or, we can decompose the above and explicitly note the 2 hidden layers:
 
 $$
 \begin{align}
-x = 5\\
-y ==3\\
-\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right)
+\mathbf{h}_1 =& \mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_1 +\mathbf{b}_1\right) \\
+\mathbf{h}_2 =& \mathbf{f}_2\left(\mathbf{h}_1\right)=\text{relu}\left(\mathbf{h}_1 \cdot \mathbf{W}_2 +\mathbf{b}_2 \right) \\
+\hat{\mathbf{y}} =& \mathbf{f}_3 \left(\mathbf{h}_2 \right)=\mathbf{h}_2 \cdot \mathbf{W}_3 +\mathbf{b}_3
 \end{align}
-$$
-
-$$
-\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right) \\
-\mathbf{h}_{\mathbf{2}}=\mathbf{f}_{\mathbf{2}}\left(\mathbf{h}_{\mathbf{1}}\right)=\text{relu}\left(\mathbf{h}_{\mathbf{1}} \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}\right) \\
-\hat{\mathbf{y}}=\mathbf{f}_{\mathbf{3}}\left(\mathbf{h}_{\mathbf{2}}\right)=\mathbf{h}_{\mathbf{2}} \cdot \mathbf{W}_{\mathbf{3}}+\mathbf{b}_{\mathbf{3}}
 $$
 
 
@@ -390,19 +378,23 @@ a_{d 1} & a_{d 2} & a_{d 3} & \ldots & a_{d n}
 $$
 
 Where $a_{ij}$ is created by performing an element wise multiplication of the Weights matrix and the section of the input matrix that begins at $x_{ij}$ and has the same width and height as the Weights matrix. We then take the sum of the resulting matrix to calculate $a_{ij}$. For example, if we wanted to find $a_{22}$, we would multiply Weights by the following matrix:
+
 $$
 \left[\begin{array}{ll}
 x_{22} & x_{23} \\
 x_{32} & x_{33}
 \end{array}\right]
 $$
+
 to get
+
 $$
 \left[\begin{array}{ll}
 x_{22} * w_{11} & x_{23} * w_{12} \\
 x_{32} * w_{21} & x_{33} * w_{22}
 \end{array}\right]
 $$
+
 before taking the sum of this matrix $a_{22}=x_{22}∗w_{11}+x_{23}∗w_{12}+x_{32}∗w_{21}+x_{33}∗w_{22}$
 
 Sometimes when applying a convolution, the Input matrix is padded with $0$'s to ensure that the output and input matrix can be the same size. However, in this question that is not required. As a result, your output matrix should be smaller than your input matrix.
@@ -451,6 +443,7 @@ $$
 
 
 This pattern continues for all letters in the input word, where the hidden state at each step summarizes all the letters the network has processed thus far:
+
 $$
 h_3=f(h_2,x_2) \\
 \dots
@@ -496,15 +489,6 @@ python autograder.py -q q4
 
 
 **Disclaimer**: This dataset was generated using automated text processing. It may contain errors. It has also not been filtered for profanity. However, our reference implementation can still correctly classify over 89% of the validation set despite the limitations of the data. Our reference implementation takes 10-20 epochs to train.
-
-------
-
-
-
-
-
-
-
 
 
 ---
