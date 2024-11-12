@@ -114,10 +114,10 @@ In this part, you will implement a binary perceptron. Your task will be to compl
 
 For the perceptron, the output labels will be either `1` or `−1`, meaning that data points `(x, y)` from the dataset will have `y` be a `torch.Tensor` that contains either `1` or `−1` as its entries.
 
-Your tasks are to:
+Your tasks are as follows:
 
-- Fill out the `init(self, dimensions)` function. This should initialize the weight parameter in `PerceptronModel`. Note that here, you should make sure that your weight variable is saved as a `Parameter()` object of dimension `1` by `dimensions`. This is so that our autograder, as well as pytorch, recognize your weight as a parameter of your model.
-- Implement the `run(self, x)` method. This should compute the dot product of the stored weight vector and the given input, returning an `Tensor` object.
+- Fill out the `init(self, dimensions)` function. This should initialize the weight parameter in `PerceptronModel`. You should define it as a vector with shape $(1 \times \text{dimensions})$, where all components are the value $1$. You can do this using the functions `torch.nn.Parameter()` and `torch.ones()` which are already imported for you. You can find their documentation online. This is so that our autograder, as well as pytorch, recognize your weight as a parameter of your model.
+- Implement the `run(self, x)` method. This should compute the dot product of the stored weight vector and the given input, returning a `Tensor` object.
 - Implement `get_prediction(self, x)`, which should return `1` if the dot product is non-negative or `−1` otherwise.
 - Write the `train(self)` method. This should repeatedly loop over the data set and make updates on examples that are misclassified. When an entire pass over the data set is completed without making any mistakes, 100% training accuracy has been achieved, and training can terminate.
 - Luckily, Pytorch makes it easy to run operations on tensors. If you would like to update your weight by some tensor `direction` and a constant `magnitude`, you can do it as follows: `self.w += direction * magnitude`
