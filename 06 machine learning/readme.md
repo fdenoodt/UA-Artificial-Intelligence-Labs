@@ -151,14 +151,14 @@ In the remaining parts of the project, you will implement the following models:
 Throughout the applications portion of the project, you’ll use the Pytorch framework to create neural networks and solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a *non-linearity*, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as $\text{relu}(x)=\max⁡(x,0)$. For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector $\mathbf{x}$ to an output vector $\mathbf{f}(\mathbf{x})$ would be given by the function:
 
 $$
-\mathbf{f}(\mathbf{x})=\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_{\mathbf{1}}\right) \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}
+\mathbf{f}(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_{\mathbf{1}}\right) \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}
 $$
 where we have parameter matrices $\mathbf{W_1}$and $\mathbf{W_2}$ and parameter vectors $\mathbf{b_1}$ and $\mathbf{b_2}$ to learn during gradient descent. $\mathbf{W_1}$ will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $x$, and $h$ is the hidden layer size. $\mathbf{b_1}$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
 
 $$
-\hat{\mathbf{y}}=\mathbf{f}(\mathbf{x})=\text{relu}\left(\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2\right) \cdot \mathbf{W}_3+\mathbf{b}_3
+\hat{\mathbf{y}}=\mathbf{f}(\mathbf{x})=\text{relu}\left(\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_1+\mathbf{b}_1\right) \cdot \mathbf{W}_2+\mathbf{b}_2\right) \cdot \mathbf{W}_3+\mathbf{b}_3
 $$
 
 
@@ -166,8 +166,8 @@ Or, we can decompose the above and explicitly note the 2 hidden layers:
 
 $$
 \begin{gathered}
-\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\operatorname{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right) \\
-\mathbf{h}_{\mathbf{2}}=\mathbf{f}_{\mathbf{2}}\left(\mathbf{h}_{\mathbf{1}}\right)=\operatorname{relu}\left(\mathbf{h}_{\mathbf{1}} \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}\right) \\
+\mathbf{h}_1=\mathbf{f}_1(\mathbf{x})=\text{relu}\left(\mathbf{x} \cdot \mathbf{W}_{\mathbf{1}}+\mathbf{b}_1\right) \\
+\mathbf{h}_{\mathbf{2}}=\mathbf{f}_{\mathbf{2}}\left(\mathbf{h}_{\mathbf{1}}\right)=\text{relu}\left(\mathbf{h}_{\mathbf{1}} \cdot \mathbf{W}_{\mathbf{2}}+\mathbf{b}_{\mathbf{2}}\right) \\
 \hat{\mathbf{y}}=\mathbf{f}_{\mathbf{3}}\left(\mathbf{h}_{\mathbf{2}}\right)=\mathbf{h}_{\mathbf{2}} \cdot \mathbf{W}_{\mathbf{3}}+\mathbf{b}_{\mathbf{3}}
 \end{gathered}
 $$
