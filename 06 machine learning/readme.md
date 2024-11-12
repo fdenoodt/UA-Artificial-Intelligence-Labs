@@ -118,12 +118,14 @@ Your tasks are as follows:
 
 - **Fill out the `init(self, dimensions)` function.** Initialize the weight parameter in `PerceptronModel` as a vector with shape $(1 \times \text{dimensions})$, where all components are set to the value `1`. Use the `torch.nn.Parameter()` and `torch.ones()` functions (already imported) to accomplish this. These functions ensure that PyTorch and our autograder recognize your weight as a parameter of your model.
 
-- **Implement the `run(self, x)` method.** This method should compute the dot product between the stored weight vector and the given input, returning a `Tensor` object.
+- **Implement the `run(self, x)` method.** This method should compute the dot product between the stored weight vector and the given input, returning a `Tensor` object. 
+  - **Hint**: In PyTorch, to compute the matrix product of two tensors, `A` with shape $(m \times n)$ and `B` with shape $(n \times o)$, use the `@` operator: `res = A @ B`, resulting in a tensor `res` with shape $(m \times o)$. To transpose a tensor `A`, use `A.T` to get $A^T$.
 
 - **Implement `get_prediction(self, x)`.** This should return `1` if the dot product is non-negative and `−1` otherwise.
 
 - **Write the `train(self)` method.** This method should repeatedly loop over the dataset, updating weights for any misclassified examples. When a complete pass over the dataset is made without any mistakes, training has achieved 100% accuracy and can terminate.
-- Luckily, PyTorch makes it easy to run operations on tensors. If you would like to update your weight by some tensor `direction` and a constant `magnitude`, you can do it as follows: `self.w += direction * magnitude`
+
+  Luckily, PyTorch makes it easy to run operations on tensors. If you would like to update your weight by some tensor `direction` and a constant `magnitude`, you can do it as follows: `self.w += direction * magnitude`
 
 For this question, as well as all of the remaining ones, every batch returned by the DataLoader will be a dictionary in the form: {‘x’:features, ‘label’:label} with label being the value(s) we want to predict based off of the features.
 
