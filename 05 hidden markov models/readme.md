@@ -115,10 +115,8 @@ Implement the `getObservationProb` method in the `InferenceModule` base class in
 - Output: 
   - Returns the probability of the noisy distance reading given Pacman’s position and the ghost’s position, i.e., $P(\text{noisyDistance} \mid \text{pacmanPosition}, \text{ghostPosition})$.
 - Steps to Implement:
-  1. Check if the ghost is in jail: 
-     - If `ghostPosition` equals `jailPosition`:
-       - If `noisyDistance` is None, return 1.0.
-       - Otherwise, return 0.0.
+  1. Check if the ghost is in jail:
+     - If so, then return 1.0 when the `noisyDistance` is `None` and 0.0 when the `noisyDistance` is not `None`.
   2. Check if the observation is None:  
      - If `noisyDistance` is None and `ghostPosition` is not `jailPosition`, return 0.0.
   3. Calculate the true distance:  
