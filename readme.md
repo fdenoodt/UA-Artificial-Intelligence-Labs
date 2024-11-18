@@ -102,5 +102,8 @@ Starting from lab 2, the labs are slit into two parts:
 
 ### Project 3 - Learning
 
+<!---
 - To be determined.
+- -->
+
 - **Deadline:** Sunday 22th of December at 23:59.
