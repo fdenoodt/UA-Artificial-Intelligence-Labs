@@ -130,7 +130,7 @@ python autograder.py -q q3
 
 ------
 
-## Question 4 (2 points): Epsilon Greedy
+## Q4: Epsilon Greedy
 
 Complete your Q-learning agent by implementing epsilon-greedy action selection in `getAction`, meaning it chooses random actions an epsilon fraction of the time, and follows its current best Q-values otherwise. Note that choosing a random action may result in choosing the best action - that is, you should not choose a random sub-optimal action, but rather any random legal action.
 
@@ -182,7 +182,7 @@ This will invoke the crawling robot from class using your Q-learner. Play around
 
 ------
 
-## Question 5 (1 point): Q-Learning and Pacman
+## Q5: Q-Learning and Pacman
 
 Time to play some Pacman! Pacman will play games in two phases. In the first phase, *training*, Pacman will begin to learn about the values of positions and actions. Because it takes a very long time to learn accurate Q-values even for tiny grids, Pacman’s training games run in quiet mode by default, with no GUI (or console) display. Once Pacman’s training is complete, he will enter *testing* mode. When testing, Pacman’s `self.epsilon` and `self.alpha` will be set to 0.0, effectively stopping Q-learning and disabling exploration, in order to allow Pacman to exploit his learned policy. Test games are shown in the GUI by default. Without any code changes you should be able to run Q-learning Pacman for very tiny grids as follows:
 
